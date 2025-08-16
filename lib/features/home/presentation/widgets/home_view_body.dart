@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/assets_data.dart';
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/widgets/custom_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/widgets/custom_list_view_item.dart';
 import 'package:bookly_app/features/home/presentation/widgets/featured_books_list_view.dart';
@@ -10,11 +11,19 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const CustomAppBar(),
-       const FeaturedBooksListView()
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const CustomAppBar(),
+         const FeaturedBooksListView(),
+         SizedBox(
+          height: 50,
+         ),
+         Text('Best Seller',style: Styles.titleMedium,)
+        ],
+      ),
     );
   }
 }
