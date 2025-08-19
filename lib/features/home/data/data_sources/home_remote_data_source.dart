@@ -6,6 +6,8 @@ import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
 import 'package:hive/hive.dart';
 
 abstract class HomeRemoteDataSource {
+  Future <List<BookEntity>> fetchFeaturedBooks();
+  Future <List<BookEntity>> fetchNewestBooks();
 
 }
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
